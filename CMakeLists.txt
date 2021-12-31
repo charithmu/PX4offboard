@@ -9,9 +9,14 @@ add_compile_options(-std=c++11)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  std_msgs
-  geometry_msgs
+  rospy
+  dynamic_reconfigure
+  tf
+  pcl_ros
+  mavros
+  mavros_extras
   mavros_msgs
+  mavlink
 )
 
 ## System dependencies are found with CMake's conventions
@@ -104,9 +109,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+# INCLUDE_DIRS include
 #  LIBRARIES testpkg
-#  CATKIN_DEPENDS roscpp std_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs mavros_msgs geometry_msgs mav_msgs sensor_msgs message_runtime tf tf2
 #  DEPENDS system_lib
 )
 
